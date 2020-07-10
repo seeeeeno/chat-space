@@ -23,7 +23,7 @@ Things you may want to cover:
 
 * ...
 
-## group_usersテーブル
+## groups_usersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
