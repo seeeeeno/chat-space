@@ -20,11 +20,14 @@
           color: #ffffff;
         }
         &__icons {
+          display: flex;
           width: 60px;
+        }
+        &__icon {
           &--white {
-            color: #ffffff;
-            float: right;
-            margin-left: 5px;
+          color: #ffffff;
+          float: right;
+          margin-left: 5px;
           }
         }
       }
