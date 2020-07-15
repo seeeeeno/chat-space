@@ -35,15 +35,16 @@
     .Group-list {
       background-color: #2f3e51;
       height: calc(100vh - 100px);
-      color: #ffffff;
       .Group-box {
         padding: 20px 20px 40px 20px;
         &__name {
           font-size: 15px;
           margin-bottom: 5px;
+          color: #ffffff;
         }
         &__message {
           font-size: 11px;
+          color: #ffffff;
         }
       }
     }
