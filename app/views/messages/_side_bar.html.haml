@@ -13,7 +13,8 @@
   .Group-list
     - current_user.groups.each do |group|
       .Group-box
-        = link_to '#' do
+        = link_to group_messages_path(group) do
           .Group-box__name
             = group.name
           .Group-box__message
+            = group.show_last_message
