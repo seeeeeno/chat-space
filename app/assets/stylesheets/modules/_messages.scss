@@ -41,6 +41,7 @@
           font-size: 15px;
           margin-bottom: 5px;
           color: #ffffff;
+         
         }
         &__message {
           font-size: 11px;
@@ -49,6 +50,9 @@
       }
     }
   }
+a {
+  text-decoration: none;
+}
 
   .Chat-main {
     width: calc(100vw - 300px);
@@ -88,8 +92,9 @@
       background-color: #fafafa;
       height: calc(100vh - 190px);
       padding-left: 40px;
+      overflow: scroll;
       
-      .Message1 {
+      .Message {
         display: flex;
         padding: 35px 0 12px 0;
         &__user-name {
@@ -101,23 +106,7 @@
           font-size: 12px;
         }
       }
-      .Message1-text {
-        color: #434A54;
-        font-size: 14px;
-      }
-      .Message2 {
-        display: flex;
-        padding: 35px 0 12px 0;
-        &__user-name {
-          color: #333333;
-          font-size: 16px;
-        }
-        &__date {
-          color: #999999;
-          font-size: 12px;
-        }
-      }
-      .Message2-text {
+      .Message-text {
         color: #434A54;
         font-size: 14px;
       }
@@ -146,10 +135,10 @@
             top: 10px;
             right: 10px;
             &__file {
-              display: none;
             }
           }
         }
+    
         .submit-btn {
           height: 50px;
           padding: 0 30px;
@@ -161,4 +150,8 @@
       }
     }
   }
+}
+
+.Hidden {
+  display: none;
 }
