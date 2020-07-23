@@ -11,7 +11,7 @@
         Edit
   .Message-list
     = render @messages
-  .form
+  .Form
     = form_with model: [@group, @message], html: {class: "form"}, local: true do |f|
       .input-box
         = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
