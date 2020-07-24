@@ -4,6 +4,7 @@
       .Group-box__name
         = @group.name
       .Group-box__member
+        Member :
         - @group.users.each do |user|
           = user.name
     .Edit-box
