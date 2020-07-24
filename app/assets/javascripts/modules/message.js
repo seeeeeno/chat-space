@@ -2,7 +2,26 @@ $(function(){
   function buildHTML(message){
     if ( message.image ) {
       let html =
-        `<div class="Message">
+        `<div class="Message" data-message-id=${message.id}>
+            <div class="MessageInfo">
+              <div class="MessageInfo__user-name">
+                ${message.user_name}
+              </div>
+              <div class="MessageInfo__date">
+                ${message.created_at}
+              </div>
+            </div>
+            <div class="Message-text">
+              <p class="Message__content">
+                ${message.content}
+              </p>
+              <img class="Message__image" src="${message.image}">
+            </div>
+          </div>`
+      return html;
+    } else {
+      let html =
+        `<div class="Message" data-message-id=${message.id}>
           <div class="MessageInfo">
             <div class="MessageInfo__user-name">
               ${message.user_name}
@@ -15,33 +34,13 @@ $(function(){
             <p class="Message__content">
               ${message.content}
             </p>
-            <img class="Message__image" src="${message.image}">
           </div>
         </div>`
-      return html;
-    } else {
-      let html =
-      `<div class="Message">
-        <div class="MessageInfo">
-          <div class="MessageInfo__user-name">
-            ${message.user_name}
-          </div>
-          <div class="MessageInfo__date">
-            ${message.created_at}
-          </div>
-        </div>
-        <div class="Message-text">
-          <p class="Message__content">
-            ${message.content}
-          </p>
-        </div>
-      </div>`
       return html;
     };
   }
   $('.form').on('submit', function(e) {
     e.preventDefault();
-    console.log("abc")
     let formData = new FormData(this);
     let url = $(this).attr('action');
     $.ajax({
@@ -61,6 +60,7 @@ $(function(){
     })
     .fail(function(){
       alert("メッセージの送信に失敗しました");
+      $('.Form__submit').prop("disabled", false);
     });
   });
-});
+ });
